@@ -1,0 +1,3 @@
+sav_homepage:
+    path:     /sav
+    defaults: { _controller: savBundle:Default:index }

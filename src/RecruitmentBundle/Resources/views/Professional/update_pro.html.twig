@@ -1,0 +1,115 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="product">
+        <div class="container">
+            <div class="col-md-3 product-price">
+
+                <div class=" rsidebar span_1_of_left">
+                    <div class="of-left">
+                        <h3 class="cate">Recruitment</h3>
+                    </div>
+                    <ul class="menu">
+
+                    </ul>
+                </div>
+                <!--initiate accordion-->
+                <script type="text/javascript">
+                    $(function() {
+                        var menu_ul = $('.menu > li > ul'),
+                            menu_a  = $('.menu > li > a');
+                        menu_ul.hide();
+                        menu_a.click(function(e) {
+                            e.preventDefault();
+                            if(!$(this).hasClass('active')) {
+                                menu_a.removeClass('active');
+                                menu_ul.filter(':visible').slideUp('normal');
+                                $(this).addClass('active').next().stop(true,true).slideDown('normal');
+                            } else {
+                                $(this).removeClass('active');
+                                $(this).next().stop(true,true).slideUp('normal');
+                            }
+                        });
+
+                    });
+                </script>
+                <!---->
+                <div class="product-middle">
+
+                    <div class="fit-top">
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="sellers">
+                    <div class="of-left-in">
+                    </div>
+                    <div class="tags">
+                    </div>
+
+                </div>
+                <!---->
+                <div class="product-bottom">
+                    <div class="of-left-in">
+                    </div>
+                    <div class="product-go">
+                        <div class=" fashion-grid">
+
+                        </div>
+                        <div class=" fashion-grid1">
+
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="product-go">
+                        <div class=" fashion-grid">
+
+                        </div>
+                        <div class="fashion-grid1">
+
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </div>
+                <div class=" per1">
+
+                </div>
+            </div>
+            <div class="col-md-4 grid-top">
+                <div class=" bottom-product">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Professional Forms</h1>
+                    </div>
+                    {{ form_start(form) }}
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputSuccess">Last Name </label>
+                        {{ form_widget(form.proname,{'attr': {'class': 'form-control'}} )}}
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputSuccess"> First Name</label>
+                        {{ form_widget(form.prosurname,{'attr': {'class': 'form-control'}} )}}
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputSuccess"> Email</label>
+                        {{ form_widget(form.email,{'attr': {'class': 'form-control'}} )}}
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputSuccess"> Softskills</label>
+                        {{ form_widget(form.softskills,{'attr': {'class': 'form-control'}} )}}
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputSuccess"> CV</label>
+                        {{ form_widget(form.file,{'attr': {'class': 'form-control'}} )}}
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputSuccess"> Enter this code below.</label>
+                        {{ form_widget(form.captcha,{'attr':{'type':'captcha'}}) }}
+                    </div>
+                    {{ form_rest(form) }}
+
+                </div></div></div></div>
+{% endblock %}

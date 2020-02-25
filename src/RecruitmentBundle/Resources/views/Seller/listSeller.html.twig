@@ -1,0 +1,100 @@
+{% extends "baseAdmin.html.twig" %}
+{% block container %}
+
+        <div class="row">
+            <div class="col-12">
+                <!-- /.card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Seller Name</th>
+                                <th>Trade Register</th>
+                                <th>Tax Number</th>
+                                <th>TVA</th>
+                                <th>Siren</th>
+                                <th>Fax</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                                <th>Licence</th>
+                                <th>QUIZ SCORE /10</th>
+                                <th>Actions</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% set j = 0 %}
+
+                            {% for i in seller %}
+                                <tr>
+                                    <td>Seller N°{{ i.id }}</td>
+                                    <td>{{ i.sellername }}</td>
+                                    <td>{{ i.rcs }}</td>
+                                    <td>{{ i.taxnumber }}</td>
+                                    <td>{{ i.tva }}</td>
+                                    <td>{{ i.siren }}</td>
+                                    <td>{{ i.fax }}</td>
+                                    <td>{{ i.phonenumber }}</td>
+                                    <td>{{ i.email }}</td>
+                                    <td><img src="{{ asset('license/') }}{{ i.image }}" style="width: 50px;height: 50px"></td>
+                                    <td>{{ tscore[j] }}</td>
+                                    <td><a href="{{ path('delete_seller',{'id':i.id}) }}">Delete</a>
+                                        <a href="{{ path('update_seller',{'id':i.id}) }}">Update</a> </td>
+                                </tr>
+                                {% set j = j+1 %}
+                            {% endfor %}
+
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Seller Name</th>
+                                <th>Trade Register</th>
+                                <th>Tax Number</th>
+                                <th>TVA</th>
+                                <th>Siren</th>
+                                <th>Fax</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                                <th>Licence</th>
+                                <th>QUIZ SCORE /10</th>
+                                <th>Actions</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+{% endblock %}
+
+
+{% block javascripts %}
+    <!-- DataTables -->
+    <script src="{{ asset("back/plugins/datatables/jquery.dataTables.js") }}"></script>
+    <script src="{{ asset("back/plugins/datatables-bs4/js/dataTables.bootstrap4.js") }}"></script>
+    <script>
+        $(function () {
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+            });
+        });
+    </script>
+{% endblock %}

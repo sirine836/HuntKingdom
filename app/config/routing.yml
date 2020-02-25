@@ -1,0 +1,40 @@
+event:
+    resource: "@EventBundle/Resources/config/routing.yml"
+    prefix:   /event
+
+panier:
+    resource: "@PanierBundle/Resources/config/routing.yml"
+    prefix:   /panier
+
+sav:
+    resource: "@savBundle/Resources/config/routing.yml"
+    prefix:   /sav
+
+forum:
+    resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix:   /forum
+
+recruitment:
+    resource: "@RecruitmentBundle/Resources/config/routing.yml"
+    prefix:   /recruitment
+
+product:
+    resource: "@ProductBundle/Resources/config/routing.yml"
+    prefix:   /product
+
+entity:
+    resource: "@EntityBundle/Resources/config/routing.yml"
+    prefix:   /entity
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+gregwar_captcha_routing:
+    resource: "@GregwarCaptchaBundle/Resources/config/routing/routing.yml"

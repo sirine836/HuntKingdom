@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>T-Hunter</title>
+    <link href="{{ asset('bundles/product1/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ asset('bundles/product1/js/jquery.min.js')}}"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="{{ asset('bundles/product1/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
+    <!-- start menu -->
+    <link href="{{ asset('bundles/product1/css/memenu.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="{{ asset('bundles/product1/js/memenu.js')}}"></script>
+    <script>$(document).ready(function(){$(".memenu").memenu();});</script>
+    <script src="{{ asset('bundles/product1/js/simpleCart.min.js')}}"> </script>
+</head>
+<body>
+<!--header-->
+<div class="header">
+    <div class="header-top">
+        <div class="container">
+            <div class="search">
+                <form>
+                    <input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                    <input type="submit" value="Go">
+                </form>
+            </div>
+            <div class="header-left">
+                <ul>
+                    <li ><a href="C:\wamp64\www\huntkingdom\app\Resources\FOSUserBundle\views\Security\login.html.twig"  >Login</a></li>
+                    <li><a  href="register.html"  >Register</a></li>
+
+                </ul>
+                <div class="cart box_1">
+                    <a href="checkout.html">
+                        <h3> <div class="total">
+                                <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+                            <img src="{{ asset('bundles/product1/images/cart.png')}}" alt=""/></h3>
+                    </a>
+                    <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="head-top">
+            <div class="logo">
+                <a href="index.html"><img src="{{ asset('bundles/product1/images/logo.png')}}" alt=""></a>
+            </div>
+            <div class=" h_menu4">
+                <ul class="memenu skyblue">
+                    <li class="active grid"><a class="color8" href="index.html">Home</a></li>
+                    <li><a class="color1" href="#">Shop</a>
+                        <div class="mepanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <ul>
+                                            <li><a href="products.html">Catégorie</a></li>
+                                            <li><a href="sproducts.html">Sous-catégorie</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="grid"><a class="color2" href="#">	Events</a>
+                        <div class="mepanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <ul>
+                                            <li><a href="products.html">Catégorie</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a class="color4" href="forum.html">Forum</a></li>
+                    <li><a class="color5" href="recruitment.html">Recruitment</a></li>
+                    <li><a class="color6" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="banner">
+    <div class="container">
+        <script src="{{ asset('bundles/product1/js/responsiveslides.min.js')}}"></script>
+        <script>
+            $(function () {
+                $("#slider").responsiveSlides({
+                    auto: true,
+                    nav: true,
+                    speed: 500,
+                    namespace: "callbacks",
+                    pager: true,
+                });
+            });
+        </script>
+        <div  id="top" class="callbacks_container">
+            <ul class="rslides" id="slider">
+                <li>
+
+                    <div class="banner-text">
+                        <h3>Hunting is an obsession </h3>
+                        <p>“The fascination of shooting as a sport depends almost wholly on whether you are at the right or wrong end of the gun.”
+                            ― P.G. Wodehouse, The Adventures of Sally</p>
+                        <a href="single.html">Learn More</a>
+                    </div>
+
+                </li>
+                <li>
+
+                    <div class="banner-text">
+                        <p>“Wildlife, we are constantly told, would run loose across our towns and cities were it not for the sport hunters to control their population, as birds would blanket the skies without the culling services of Ducks Unlimited and other groups. Yet here they are breeding wild animals, year after year replenishing the stock, all for the sole purpose of selling and killing them, deer and bears and elephants so many products being readied for the market. Animals such as deer, we are told, have no predators in many areas, and therefore need systematic culling. Yet when attempts are made to reintroduce natural predators such as wolves and coyotes into these very areas, sport hunters themselves are the first to resist it. Weaker animals in the wild, we hear, will only die miserable deaths by starvation and exposure without sport hunters to control their population. Yet it's the bigger, stronger animals they're killing and wounding--the very opposite of natural selection--often with bows and pistols that only compound and prolong the victim's suffering.”
+                            ― Matthew Scully, Dominion: The Power of Man, the Suffering of Animals, and the Call to Mercy</p>
+                        <a href="single.html">Learn More</a>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<!--content-->
+<div class="content">
+    <div class="container">
+        <div class="content-top">
+            <h1>NEW RELEASED</h1>
+            <div class="grid-in">
+                <div class="col-md-4 grid-top">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/pi.jpg')}}" alt="">
+                        <div class="b-wrapper">
+                            <h3 class="b-animate b-from-left    b-delay03 ">
+                                <span>Special PROMO on Sig Sauer P226 Select 9MM E26R9SEL</span>
+                            </h3>
+                        </div>
+                    </a>
+
+
+                    <p><a href="single.html">type sthg</a></p>
+                </div>
+                <div class="col-md-4 grid-top">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/pi1.jpg')}}" alt="">
+                        <div class="b-wrapper">
+                            <h3 class="b-animate b-from-left b-delay03 ">
+                                <span>CROSSBOW is now available</span>
+                            </h3>
+                        </div>
+                    </a>
+                    <p><a href="single.html">type sthg</a></p>
+                </div>
+                <div class="col-md-4 grid-top">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/pi2.jpg')}}" alt="">
+                        <div class="b-wrapper">
+                            <h3 class="b-animate b-from-left    b-delay03 ">
+                                <span>Fish Lures on promotion!</span>
+                            </h3>
+                        </div>
+                    </a>
+                    <p><a href="single.html">type sthg</a></p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="grid-in">
+                <div class="col-md-4 grid-top">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/pi3.jpg')}}" alt="">
+                        <div class="b-wrapper">
+                            <h3 class="b-animate b-from-left    b-delay03 ">
+                                <span>Shirt</span>
+                            </h3>
+                        </div>
+                    </a>
+                    <p><a href="single.html">type sthg</a></p>
+                </div>
+                <div class="col-md-4 grid-top">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/pi6.jpg')}}" alt="">
+                        <div class="b-wrapper">
+                            <h3 class="b-animate b-from-left    b-delay03 ">
+                                <span>Fish Lures on promotion!</span>
+                            </h3>
+                        </div>
+                    </a>
+                    <p><a href="products.html">Access to the shop!</a></p>
+                </div>
+                <div class="col-md-4 grid-top">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/pi5.jpg')}}" alt="">
+                        <div class="b-wrapper">
+                            <h3 class="b-animate b-from-left    b-delay03 ">
+                                <span>Shoe</span>
+                            </h3>
+                        </div>
+                    </a>
+                    <p><a href="single.html">readable content</a></p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!----->
+
+        <div class="content-top-bottom">
+            <h2>Featured Collections</h2>
+            <div class="col-md-6 men">
+                <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/t1.jpg')}}" alt="">
+                    <div class="b-wrapper">
+                        <h3 class="b-animate b-from-top top-in   b-delay03 ">
+                            <span>Clothing</span>
+                        </h3>
+                    </div>
+                </a>
+
+
+            </div>
+            <div class="col-md-6">
+                <div class="col-md1 ">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/pi4.jpg')}}" alt="">
+                        <div class="b-wrapper">
+                            <h3 class="b-animate b-from-top top-in1   b-delay03 ">
+                                <span>Weapons</span>
+                            </h3>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md2">
+                    <div class="col-md-6 men1">
+                        <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/t3.jpg')}}" alt="">
+                            <div class="b-wrapper">
+                                <h3 class="b-animate b-from-top top-in2   b-delay03 ">
+                                    <span>Fishing</span>
+                                </h3>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="col-md-6 men2">
+                        <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/t4.jpg')}}" alt="">
+                            <div class="b-wrapper">
+                                <h3 class="b-animate b-from-top top-in2   b-delay03 ">
+                                    <span>Fish Lures</span>
+                                </h3>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!---->
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="footer-top-at">
+
+            <div class="col-md-4 amet-sed">
+                <h4>MORE INFO</h4>
+                <ul class="nav-bottom">
+                    <li><a href="#">How to order</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="contact.html">Location</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Membership</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 amet-sed ">
+                <h4>CONTACT US</h4>
+
+                <p>PROgineers</p>
+                <p>Phone Number:  +216 70 110 230</p>
+                <ul class="social">
+                    <li><a href="#"><i> </i></a></li>
+                    <li><a href="#"><i class="twitter"> </i></a></li>
+                    <li><a href="#"><i class="rss"> </i></a></li>
+                    <li><a href="#"><i class="gmail"> </i></a></li>
+
+                </ul>
+            </div>
+            <div class="col-md-4 amet-sed">
+                <h4>Newsletter</h4>
+                <p>Sign Up to get all news update
+                    and promo</p>
+                <form>
+                    <input type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+                    <input type="submit" value="Sign up">
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="footer-class">
+        <p >© 2020 New store All Rights Reserved | Design by <a href="" target="_blank">PROgineers</a> </p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'question/display.html.twig' %}
+
+{% block container %}
+    <form action="{{ path('question_answer') }}" method="post">
+        {% for question in questions %}
+            <h1>{{ question.wording }}</h1>
+            <select class="form-control"  name="{{ question.id }}">
+                {% for proposition in question.propositions %}
+                <option  value="{{ proposition.id }}">{{ proposition.name }}</option>
+                {% endfor %}
+            </select>
+        {% endfor %}
+        <input  type="submit" value="Submit"/>
+    </form>
+{% endblock %}

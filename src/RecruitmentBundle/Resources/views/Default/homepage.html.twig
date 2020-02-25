@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <style>
+        h1 {
+            text-align: center;
+
+        }
+        .image {
+            display: block;
+            margin-left: 250px;
+            margin-right: 250px;
+            width: 110%;
+        }
+    </style>
+    <h1 style="color: #bf800c">Looking for a job?</h1>
+    <div class="clearfix"> </div>
+    <div class="image">
+        <div class="col-md-4 grid-top">
+            <a href="{{ path('seller_add') }}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/sell.png')}}" alt="">
+                <div class="b-wrapper">
+                    <h3 class="b-animate b-from-left b-delay03 ">
+                        <span>You need to sell your products online?</span>
+                    </h3>
+                </div>
+            </a>
+
+        </div>
+        <div class="col-md-4 grid-top">
+            <a href="{{ path('professional_add') }}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('bundles/product1/images/tutor.png')}}" alt="">
+                <div class="b-wrapper">
+                    <h3 class="b-animate b-from-left b-delay03 ">
+                        <span>So you think you can tutor?</span>
+                    </h3>
+                </div>
+            </a>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block conta %}
+    <h1>Proposition</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ proposition.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ proposition.name }}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>{% if proposition.state %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('proposition_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('proposition_edit', { 'id': proposition.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

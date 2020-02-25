@@ -1,0 +1,41 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block container %}
+    <h1>Propositions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>State</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for proposition in propositions %}
+            <tr>
+                <td><a href="{{ path('proposition_show', { 'id': proposition.id }) }}">{{ proposition.id }}</a></td>
+                <td>{{ proposition.name }}</td>
+                <td>{% if proposition.state %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('proposition_show', { 'id': proposition.id }) }}">Show Propostion</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('proposition_edit', { 'id': proposition.id }) }}">Edit Proposition</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('proposition_new') }}">Create a new proposition</a>
+        </li>
+    </ul>
+{% endblock %}

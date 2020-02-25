@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .pow{
+            text-align: justify;
+        }
+    </style>
+    <div class="container">
+        <div class="page-header">
+    <div class="form-group">
+        <h1 class="color: orange" for="inputSuccess"> Thanks for submitting! Your answers are now registered!</h1>
+        <div class="clearfix"> </div>
+        <a class="pow" href="{{path('user_homepage')}}" style="color: orange">Back to homepage.</a>
+    </div>
+        <div class="clearfix"> </div>
+        </div></div>
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+product_add:
+        path: /addproduct
+        defaults: {_controller: ProductBundle:Product:AddProduct}
+list_product:
+        path: /listproduct
+        defaults: {_controller: ProductBundle:Product:ListProduct}
+delete_product:
+        path: /deleteproduct/{id}
+        defaults: {_controller: ProductBundle:Product:DeleteProduct}
+update_product:
+        path: /updateproduct/{id}
+        defaults: {_controller: ProductBundle:Product:UpdateProduct}
+category_add:
+        path: /addcategory
+        defaults: {_controller: ProductBundle:Category:AddCategory}
+list_category:
+        path: /listcategory
+        defaults: {_controller: ProductBundle:Category:ListCategory}
+delete_category:
+        path: /deletecategory/{id}
+        defaults: {_controller: ProductBundle:Category:DeleteCategory}
+update_category:
+        path: /updatecategory/{id}
+        defaults: {_controller: ProductBundle:Category:UpdateCategory}

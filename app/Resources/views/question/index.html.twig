@@ -1,0 +1,47 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block container %}
+    <h1>Questions list</h1>
+<div class="row">
+    <div class="col-12">
+        <!-- /.card -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title"></h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Wording</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+                <td><a href="{{ path('question_show', { 'id': question.id }) }}">{{ question.id }}</a></td>
+                <td>{{ question.wording }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('question_edit', { 'id': question.id }) }}">Edit question</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('question_delete', { 'id': question.id }) }}">Delete Question</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            </div></div></div></div>
+    <ul>
+        <li>
+            <a href="{{ path('question_new') }}">Create a new question</a>
+        </li>
+    </ul>
+{% endblock %}

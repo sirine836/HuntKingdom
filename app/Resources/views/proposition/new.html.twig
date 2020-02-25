@@ -1,0 +1,17 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block container %}
+    <h1>Proposition creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <a href="{{ path("proposition_clear_create") }}" class="btn">clear</a>
+    <ul>
+        <li>
+            <a href="{{ path('proposition_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

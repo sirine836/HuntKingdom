@@ -1,0 +1,41 @@
+{% extends 'BaseLogin.html.twig' %}
+
+{% block body %}
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#"><b>T</b>Hunter</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            {{ form_start(form) }}
+            <div class="form-group has-feedback">
+                <input type="email" id="email" name="fos_user_registration_form[email]"  required="required" style="height: 30px" autocomplete="username" class="form-control" placeholder="Email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <input type="text" id="username" name="fos_user_registration_form[username]"  required="required" style="height: 30px"autocomplete="username" class="form-control" placeholder="username">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+            <div class="form-group has-feedback"></div>
+            <div class="form-group has-feedback">
+                <input type="password" id="password" name="fos_user_registration_form[plainPassword][first]" style="height: 30px" required="required" autocomplete="username" class="form-control" placeholder="password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" id="password2" name="fos_user_registration_form[plainPassword][second]" style="height: 30px" required="required" autocomplete="username" class="form-control" placeholder="Confirmer password">
+                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-xs-12">
+                    <button type="submit" style="background-color: orange;border-radius: 70px">Register</button>
+                </div>
+            </div>
+
+            {{ form_row(form._token) }}
+            {{ form_end(form, {'render_rest': false}) }}
+        </div>
+    </div>
+
+{% endblock body %}
