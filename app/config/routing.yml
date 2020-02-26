@@ -1,3 +1,19 @@
+entity_metacomment:
+    resource: "@ForumBundle/Controller/MetacommentController.php"
+    type:     annotation
+
+entity_metapost:
+    resource: "@ForumBundle/Controller/MetapostController.php"
+    type:     annotation
+
+entity_comment:
+    resource: "@ForumBundle/Controller/CommentController.php"
+    type:     annotation
+
+entity_post:
+    resource: "@ForumBundle/Controller/PostController.php"
+    type:     annotation
+
 event:
     resource: "@EventBundle/Resources/config/routing.yml"
     prefix:   /event

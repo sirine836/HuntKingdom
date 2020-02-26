@@ -1,12 +1,5 @@
 {% extends "baseAdmin.html.twig" %}
 {% block container %}
-<form method="post">
-                    <h2> <label for="type"> Search </label> </h2>
-                    <input type="text" name="proname">
-                    <button class="btn btn-warning"><a href="{{ path('professional_search') }}"></a>Search </button>
-                </form>
-
-    <section class="content">
     <section class="content">
         <div class="row">
             <div class="col-12">
@@ -72,5 +65,17 @@
     <!-- DataTables -->
     <script src="{{ asset("back/plugins/datatables/jquery.dataTables.js") }}"></script>
     <script src="{{ asset("back/plugins/datatables-bs4/js/dataTables.bootstrap4.js") }}"></script>
-
+    <script>
+        $(function () {
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+            });
+        });
+    </script>
 {% endblock %}

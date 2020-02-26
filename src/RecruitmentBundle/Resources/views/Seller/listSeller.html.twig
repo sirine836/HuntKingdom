@@ -1,6 +1,6 @@
 {% extends "baseAdmin.html.twig" %}
 {% block container %}
-
+    <section class="content">
         <div class="row">
             <div class="col-12">
                 <!-- /.card -->
@@ -22,15 +22,12 @@
                                 <th>Fax</th>
                                 <th>Phone Number</th>
                                 <th>Email</th>
-                                <th>Licence</th>
-                                <th>QUIZ SCORE /10</th>
+                                <th>Upload CV</th>
                                 <th>Actions</th>
-
+                                <th>QUIZ SCORE</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% set j = 0 %}
-
                             {% for i in seller %}
                                 <tr>
                                     <td>Seller N°{{ i.id }}</td>
@@ -43,13 +40,11 @@
                                     <td>{{ i.phonenumber }}</td>
                                     <td>{{ i.email }}</td>
                                     <td><img src="{{ asset('license/') }}{{ i.image }}" style="width: 50px;height: 50px"></td>
-                                    <td>{{ tscore[j] }}</td>
                                     <td><a href="{{ path('delete_seller',{'id':i.id}) }}">Delete</a>
                                         <a href="{{ path('update_seller',{'id':i.id}) }}">Update</a>
                                         <a href="{{ path('sendMailSeller',{'id':i.id}) }}">Validate</a>
                                     </td>
                                 </tr>
-                                {% set j = j+1 %}
                             {% endfor %}
 
                             </tbody>
@@ -64,8 +59,7 @@
                                 <th>Fax</th>
                                 <th>Phone Number</th>
                                 <th>Email</th>
-                                <th>Licence</th>
-                                <th>QUIZ SCORE /10</th>
+                                <th>Upload CV</th>
                                 <th>Actions</th>
                             </tr>
                             </tfoot>

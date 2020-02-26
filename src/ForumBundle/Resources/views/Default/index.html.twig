@@ -1,1 +1,28 @@
-Hello World!
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="blog">
+        <div class="container">
+            <div class="container">
+                <h1>Welcome to the Community!</h1>
+                <div class="blog-top">
+                    <div class="col-md-6 grid_3">
+                        <h3><a href="{{ path('post_new') }}">Start a Discussion</a></h3>
+                        <a href="{{ path('post_new') }}" ><img src="{{ asset('images/b1.jpg') }}" class="img-responsive" alt="">
+                        </a>
+                        <div class="blog-poast-info">
+                        </div>
+                    </div>
+                    <div class="col-md-6 grid_3">
+                        <h3><a href="{{ path('post_index') }}">Browse Discussions</a></h3>
+                        <a href="{{ path('post_index') }}"><img src="{{ asset('images/b2.jpg') }}" class="img-responsive" alt=""></a>
+                        <div class="blog-poast-info">
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
