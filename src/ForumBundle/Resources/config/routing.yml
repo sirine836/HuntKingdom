@@ -1,3 +1,24 @@
 forum_homepage:
-    path:     /forum
+    path:     /wpage
     defaults: { _controller: ForumBundle:Default:index }
+
+forum_comment:
+    resource: "@ForumBundle/Resources/config/routing/comment.yml"
+    prefix:   /comment
+
+forum_post:
+    resource: "@ForumBundle/Resources/config/routing/post.yml"
+    prefix:   /post
+
+ajax_search:
+    path:     /search
+    defaults: { _controller: "ForumBundle:Post:search" }
+    methods:  GET
+
+dash:
+    path:     /dash
+    defaults: { _controller: ForumBundle:Admin:index }
+
+graphePie:
+    path:     /pie
+    defaults: { _controller: ForumBundle:Admin:stat}

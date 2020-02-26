@@ -1,12 +1,12 @@
-{% extends 'baseAdmin.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block container %}
+{% block body %}
     <h1>Propositions list</h1>
 
     <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Id</th>
                 <th>Name</th>
                 <th>State</th>
                 <th>Actions</th>
@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('proposition_show', { 'id': proposition.id }) }}">Show Propostion</a>
+                            <a href="{{ path('proposition_show', { 'id': proposition.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('proposition_edit', { 'id': proposition.id }) }}">Edit Proposition</a>
+                            <a href="{{ path('proposition_edit', { 'id': proposition.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>

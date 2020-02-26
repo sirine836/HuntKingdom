@@ -28,6 +28,8 @@ class AppKernel extends Kernel
             new savBundle\savBundle(),
             new PanierBundle\PanierBundle(),
             new EventBundle\EventBundle(),
+            new FOS\CKEditorBundle\FOSCKEditorBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

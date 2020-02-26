@@ -2,8 +2,6 @@
 
 namespace EntityBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,15 +29,9 @@ class Question
     private $wording;
 
     /**
-    * @ORM\OneToMany(targetEntity="Proposition", mappedBy="question", orphanRemoval=true)
+    * @ORM\OneToMany(targetEntity="Proposition", mappedBy="question")
     */
     private $propositions;
-
-    /**
-     * @var ArrayCollection
-    * @ORM\OneToMany(targetEntity="EntityBundle\Entity\Answer", mappedBy="question", orphanRemoval=true)
-    */
-    private $answers;
 
     /**
      * @return mixed
@@ -57,12 +49,11 @@ class Question
         $this->propositions = $propositions;
     }
 
-    /**
-     * @return Collection
-     */
-    public function getAnswers(){
-        return $this->answers;
-    }
+
+
+
+
+
 
 
     /**

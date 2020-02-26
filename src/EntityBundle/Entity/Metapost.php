@@ -36,7 +36,7 @@ class Metapost
 
     /**
      * @ORM\ManyToOne(targetEntity="\EntityBundle\Entity\Post", inversedBy="metapost")
-     * @ORM\JoinColumn(name="post_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="post_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $post;
 

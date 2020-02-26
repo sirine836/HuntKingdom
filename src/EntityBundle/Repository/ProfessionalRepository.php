@@ -10,5 +10,4 @@ namespace EntityBundle\Repository;
  */
 class ProfessionalRepository extends \Doctrine\ORM\EntityRepository
 {
-
 }
