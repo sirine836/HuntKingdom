@@ -3,8 +3,8 @@
 namespace EntityBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Product
@@ -22,6 +22,27 @@ class Product
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    /**
+     * @ORM\ManyToOne(targetEntity="EntityBundle\Entity\Category")
+     * @ORM\JoinColumn(name="idCategory", referencedColumnName="id")"
+     */
+    private $category;
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
 
     /**
      * @var string
@@ -34,6 +55,9 @@ class Product
      * @var integer
      *
      * @ORM\Column(name="quantity", type="integer")
+     * @Assert\NotBlank
+     * @Assert\GreaterThan (0)
+
      */
     private $quantity;
 
@@ -62,6 +86,7 @@ class Product
 
     /**
      * @var float
+     *
      *
      * @ORM\Column(name="prix", type="float")
      */

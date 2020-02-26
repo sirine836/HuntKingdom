@@ -1,0 +1,97 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+        </div>
+    </div>
+    <div class="heading color-dark text-center mg-bottom-60">
+        <h2 class="heading-color  polaroid" style="color: orange ; margin-top: 20px">
+            List Products            </h2>
+    </div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="polaroid">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-primary">
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row" style="margin-left: 20px">
+                                    <a href="{{ path('Sortprod_index') }}" class="fas fa-align-center">  trier</a>
+                                </br>
+                                    {% for i in product %}
+                                        <div class="col-sm-4">
+
+                                            <div class="ribbon-wrapper">
+                                                <div style="background-color: orange;border-radius: 10px; text-align: center; color: black">
+                                                    <b>{{ i.nompr }}</b>
+                                                </div>
+                                                <div class="polaroid" align="center">
+                                                <div class="container" style="width:inherit; height: 100px" >
+                                                    <img src="{{ asset('images/') }}{{ i.image }}" class="image" style="border-radius: 20% ; height: inherit">
+                                                    <div class="overlay">
+                                                        <div class="text">
+                                                            <a href="{{ path('show_prod',{'id':i.id}) }}">  prix : {{ i.prix }}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <a href="#" class="btn btn-danger btn-sm" style="align-content:center;margin: 1%; margin-bottom: 20px;border-radius: 50px">
+                                                    <img src="{{ asset('bundles/product1/images/cart.png')}}" alt=""/>
+                                                </a>
+                                                    <a href="{{ path('update_product_index',{'id':i.id}) }}">Update</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    {% endfor %}
+                                    <div class="clearfix"></div>
+
+                                </div>
+                                <div class="text-center">{{ knp_pagination_render(product) }}</div>
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <!-- DataTables -->
+    <script src="{{ asset("back/plugins/datatables/jquery.dataTables.js") }}"></script>
+    <script src="{{ asset("back/plugins/datatables-bs4/js/dataTables.bootstrap4.js") }}"></script>
+    <script>
+        $(function () {
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+        </div>
+    </div>
+    <div class="heading color-dark text-center mg-bottom-60">
+        <h2 class="heading-color  polaroid" style="color: orange ; margin-top: 20px">
+            List Products            </h2>
+
+    </div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="polaroid">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-primary">
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    {% for i in prods %}
+                                        <div class="col-sm-4">
+
+                                            <div class="ribbon-wrapper">
+                                                <div style="background-color: orange;border-radius: 10px; text-align: center; color: black">
+                                                    <b>{{ i.nompr }}</b>
+                                                </div>
+                                                <div class="polaroid" align="center">
+                                                    <div class="image" >
+                                                        <img src="{{ asset('images/') }}{{ i.image }}"  class="image">
+
+                                                    </div>
+
+                                                    <a href="#" class="btn btn-danger btn-sm" style="align-content:center;margin: 1%; margin-bottom: 20px;border-radius: 50px">
+                                                        <img src="{{ asset('bundles/product1/images/cart.png')}}" alt=""/>
+                                                    </a>
+                                                    <a href="{{ path('update_product_index',{'id':i.id}) }}">Update</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    {% endfor %}
+                                    <div class="clearfix"></div>
+
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}
