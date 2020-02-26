@@ -88,8 +88,6 @@ fos_user:
     firewall_name: main
     user_class: UserBundle\Entity\User
     from_email:
-        address: "loudywer@gmail.com"
-        sender_name: "loudywer"
         address: "thunteresprit@gmail.com"
         sender_name: "Thunter"
 
