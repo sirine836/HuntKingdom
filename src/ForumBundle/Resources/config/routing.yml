@@ -19,6 +19,3 @@ dash:
     path:     /dash
     defaults: { _controller: ForumBundle:Admin:index }
 
-graphePie:
-    path:     /pie
-    defaults: { _controller: ForumBundle:Admin:stat}
