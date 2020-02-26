@@ -3,6 +3,7 @@
 namespace EntityBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * Answer
@@ -29,8 +30,6 @@ class Answer
      */
     private $question;
 
-
-
     /**
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
      * @ORM\JoinColumn(name="idUser", referencedColumnName="id")"
@@ -38,14 +37,13 @@ class Answer
     private $user;
 
     /**
-     * @var string
      *
      * @ORM\Column(name="score", type="integer")
      */
     private $score;
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getScore()
     {
@@ -53,12 +51,13 @@ class Answer
     }
 
     /**
-     * @param string $score
+     * @param mixed $score
      */
-    public function setScore(string $score)
+    public function setScore($score)
     {
         $this->score = $score;
     }
+
 
     /**
      * @return mixed

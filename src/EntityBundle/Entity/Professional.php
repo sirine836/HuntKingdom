@@ -23,6 +23,7 @@ class Professional
     private $id;
 
 
+
     /**
      * Get id
      *
@@ -69,6 +70,13 @@ class Professional
      * @Assert\File(maxSize="500k")
      */
     public $file;
+
+
+    /**
+     * @ORM\OneToOne(targetEntity="\UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUser", referencedColumnName="id")
+     */
+    private $user;
 
     /**
      * Set proname
@@ -198,5 +206,23 @@ class Professional
     public function getImage(){
         return $this->image;
     }
+
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
 }
 

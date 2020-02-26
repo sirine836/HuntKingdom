@@ -1,27 +1,35 @@
 recruitment_homepage:
     path:     /recruitment
     defaults: {_controller: RecruitmentBundle:Default:index}
+
 seller_add:
     path: /addseller
     defaults: {_controller: RecruitmentBundle:Seller:AddSeller}
+
 list_seller:
     path: /listseller
     defaults: {_controller: RecruitmentBundle:Seller:ListSeller}
+
 delete_seller:
     path: /deleteseller/{id}
     defaults: {_controller: RecruitmentBundle:Seller:DeleteSeller}
+
 update_seller:
     path: /updateseller/{id}
     defaults: {_controller: RecruitmentBundle:Seller:UpdateSeller}
+
 professional_add:
     path: /addprofessional
     defaults: {_controller: RecruitmentBundle:Professional:AddPro}
+
 list_professional:
     path: /listprofessional
     defaults: {_controller: RecruitmentBundle:Professional:ListPro}
+
 delete_professional:
     path: /deleteprofessional/{id}
     defaults: {_controller: RecruitmentBundle:Professional:DeletePro}
+
 update_professional:
     path: /updateprofessional/{id}
     defaults: {_controller: RecruitmentBundle:Professional:UpdatePro}
@@ -29,6 +37,7 @@ update_professional:
 question_index:
     path:     /question
     defaults: { _controller: RecruitmentBundle:Question:index }
+
 question_continue:
     path:     /continue
     defaults: { _controller: RecruitmentBundle:Question:Continue }
@@ -41,11 +50,9 @@ question_new:
     path:     /question/new
     defaults: { _controller: RecruitmentBundle:Question:new }
 
-
 question_edit:
     path:     /question/{id}/edit
     defaults: { _controller: RecruitmentBundle:Question:edit }
-
 
 question_delete:
     path:     /question/{id}/delete
@@ -59,20 +66,18 @@ proposition_index:
     path:     /proposition
     defaults: { _controller: RecruitmentBundle:Proposition:index }
 
-
 proposition_show:
     path:     /proposition/{id}/show
     defaults: { _controller: RecruitmentBundle:Proposition:show }
-
 
 proposition_new:
     path:     /proposition/new/{id}
     defaults: { _controller: RecruitmentBundle:Proposition:new }
 
-
 proposition_edit:
     path:     /proposition/{id}/edit
     defaults: { _controller: RecruitmentBundle:Proposition:edit }
+
 proposition_clear_create:
     path:     /proposition/clear
     defaults: { _controller: RecruitmentBundle:Proposition:clearCreate }
@@ -80,12 +85,15 @@ proposition_clear_create:
 proposition_delete:
     path:     /proposition/{id}/delete
     defaults: { _controller: RecruitmentBundle:Proposition:delete }
+
 professional_search:
     path: /listprofessional/search
     defaults: {_controller: RecruitmentBundle:Professional:Search }
+
 sendMail:
-    path: /sendmail/{id}
+    path: /listPofessional/sendmail/{id}
     defaults: {_controller: RecruitmentBundle:Mail:sendMail}
+
 sendMailSeller:
-    path: /sendmailseller/{id}
+    path: /sendMailSeller/{id}
     defaults: {_controller: RecruitmentBundle:Mail:sendMailSeller}

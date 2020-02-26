@@ -6,7 +6,7 @@ use EntityBundle\Entity\Seller;
 use EntityBundle\Form\SellerType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 
 class SellerController extends Controller
@@ -17,22 +17,42 @@ class SellerController extends Controller
      */
     public function ListSellerAction(){
         $em = $this->getDoctrine()->getManager();
-
         $sellerlist = $em->getRepository('EntityBundle:Seller')->findAll();
+        $i=0;
+        foreach ($sellerlist as $seller) {
+
+            $score=0;
+            $answer = $em->getRepository('EntityBundle:Answer')->findDQL($seller->getUser()->getId());
+            foreach ($answer as $j) {
+                if ($j->getScore()) {
+                    $score = $score + 1;
+                }
+            }
+            $tscore[$i]=$score;
+            $i++;
+        }
         return $this->render('@Recruitment/Seller/listSeller.html.twig', array(
-            "seller" => $sellerlist,
+            "seller" => $sellerlist, "tscore"=> $tscore,
         ));
     }
-
-/*   public function ScoreSellerAction(){
+/*
+  public function ScoreSellerAction(){
         $em = $this->getDoctrine()->getManager();
+        $sellerscore = $em->getRepository('EntityBundle:Answer')->FindAll();
+        $sellerlist = $em->getRepository('EntityBundle:Seller')->FindAll();
 
-        $sellerscore = $em->getRepository('EntityBundle:Answer')->FindByScore();
-        return $this->render('@Recruitment/Seller/listSeller.html.twig', array(
-            "score" => $sellerscore,
+      $query= $em->createQuery(
+            '
+            SELECT count(score) from EntityBundle\Entity\Answer  where score=1
+            '
+        );
+        $result= $query->execute();
+        print_r($result);
+        return $this->render('@Recruitment/Seller/listscore.html.twig', array(
+            "score" => $sellerscore, ["seller"=> $sellerlist]
         ));
-    }*/
-
+    }
+*/
 
     /**
      * @IsGranted("ROLE_MEMBER")
@@ -42,9 +62,12 @@ class SellerController extends Controller
         $seller = new Seller();
         $form = $this->createForm(SellerType::class, $seller);
         $form->handleRequest($request);
+        $user= $this->getUser();
         if ($form->isSubmitted()&& $form->isValid()) {
+
             $em = $this->getDoctrine()->getManager();
             $seller->uploadProfilePicture();
+            $seller->setUser($user);
             $em->persist($seller);
             $em->flush();
 
@@ -60,6 +83,25 @@ class SellerController extends Controller
      * @IsGranted("ROLE_SUPER_ADMIN")
      */
     public function UpdateSellerAction(Request $request, $id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $seller = $em->getRepository('EntityBundle:Seller')->find($id);
+        $form = $this->createForm(SellerType::class, $seller);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($seller);
+            $em->flush();
+            $this->addFlash('info', 'Created Successfully !');
+            return $this->redirectToRoute('list_seller');
+        }
+        return $this->render('@Recruitment/Seller/update_seller.html.twig', array("form" => $form->createView()
+        ));
+
+    }
+    public function ValidateAction(Request $request, $id)
     {
 
         $em = $this->getDoctrine()->getManager();

@@ -3,7 +3,9 @@
 namespace RecruitmentBundle\Controller;
 
 use EntityBundle\Entity\Answer;
+use EntityBundle\Entity\Proposition;
 use EntityBundle\Entity\Question;
+//use EntityBundle\Entity\Proposition;
 use http\Env\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -108,7 +110,7 @@ class QuestionController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-/*
+
     public function editAction(Request $request, Question $question)
     {
         $deleteForm = $this->createDeleteForm($question);
@@ -129,17 +131,11 @@ class QuestionController extends Controller
     }
 
 
-    public function deleteAction(Request $request, Question $question)
+    public function deleteAction(Question $question)
     {
-        $form = $this->createDeleteForm($question);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($question);
-            $em->flush();
-        }
-
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($question);
+        $em->flush();
         return $this->redirectToRoute('question_index');
     }
 
@@ -150,5 +146,5 @@ class QuestionController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
-    }*/
+    }
 }

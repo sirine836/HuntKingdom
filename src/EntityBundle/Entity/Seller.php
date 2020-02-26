@@ -22,49 +22,28 @@ class Seller
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-   /* /**
-     * @ORM\OneToOne(targetEntity="Answer")
-     * @JoinColumn(name="answer_id",referencedColumnName="score")
+    /**
+     * @ORM\OneToOne(targetEntity="\UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUser", referencedColumnName="id")
      */
-/*
-    private $res;
+    private $user;
 
     /**
      * @return mixed
      */
- /*   public function getRes()
+    public function getUser()
     {
-        return $this->res;
+        return $this->user;
     }
 
     /**
-     * @param mixed $res
+     * @param mixed $user
      */
-   /* public function setRes($res)
+    public function setUser($user)
     {
-        $this->res = $res;
-    }*/
-    /**
-     * @ORM\ManyToOne(targetEntity="EntityBundle\Entity\Product")
-     * @ORM\JoinColumn(name="idProduct", referencedColumnName="id")"
-     */
-    private $Product;
-
-    /**
-     * @return mixed
-     */
-    public function getProduct()
-    {
-        return $this->Product;
+        $this->user = $user;
     }
 
-    /**
-     * @param mixed $Product
-     */
-    public function setProduct($Product)
-    {
-        $this->Product = $Product;
-    }
 
     /**
      * @var string

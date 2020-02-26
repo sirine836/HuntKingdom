@@ -28,7 +28,7 @@ class MailController extends Controller
             //$object = $request->get('form')['object'];
             $object = $mail->getObject();
             $username = 'thunteresprit@gmail.com';
-          $message = \Swift_Message::newInstance()
+            $message = \Swift_Message::newInstance()
                 ->setSubject($subject)
                 ->setFrom($username)
                 ->setTo($email)
@@ -39,7 +39,7 @@ class MailController extends Controller
 
         return $this->render('@Recruitment/Mail/sendMail.html.twig', array ('form'=>$form->createView()));
 
-        }
+    }
 
     public function sendMailSellerAction(Request $request, $id)
     {
