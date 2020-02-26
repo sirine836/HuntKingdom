@@ -83,6 +83,7 @@ proposition_delete:
 professional_search:
     path: /listprofessional/search
     defaults: {_controller: RecruitmentBundle:Professional:Search }
-score:
-    path: /score
-    defaults: {_controller: RecruitmentBundle:Seller:ScoreSeller}
+sendMail:
+    path: /listPofessional/sendmail/{id}
+    defaults: {_controller: RecruitmentBundle:Mail:sendMail}
+

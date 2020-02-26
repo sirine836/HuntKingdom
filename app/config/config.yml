@@ -71,10 +71,11 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
+    transport: smtp
+    encryption: ssl
+    host: 'smtp.gmail.com'
+    username: 'thunteresprit@gmail.com'
+    password: 'pidevhuntkingdom'
     spool: { type: memory }
 
 sensio_framework_extra:
@@ -89,5 +90,7 @@ fos_user:
     from_email:
         address: "loudywer@gmail.com"
         sender_name: "loudywer"
+        address: "thunteresprit@gmail.com"
+        sender_name: "Thunter"
 
 gregwar_captcha: ~
