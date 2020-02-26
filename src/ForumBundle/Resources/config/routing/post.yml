@@ -1,0 +1,43 @@
+post_index:
+    path:     /
+    defaults: { _controller: "ForumBundle:Post:index" }
+    methods:  GET
+
+post_show:
+    path:     /{id}/show
+    defaults: { _controller: "ForumBundle:Post:show" }
+    methods:  GET
+
+post_new:
+    path:     /new
+    defaults: { _controller: "ForumBundle:Post:new" }
+    methods:  [GET, POST]
+
+post_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ForumBundle:Post:edit" }
+    methods:  [GET, POST]
+
+post_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ForumBundle:Post:delete" }
+    methods:  DELETE
+
+comment:
+    path:     /{id}/newcomment
+    defaults: { _controller: "ForumBundle:Post:comment" }
+    methods:  [GET, POST]
+
+upvote:
+    path:     /{id}/upvote
+    defaults: { _controller: "ForumBundle:Post:upvote" }
+    methods:  [GET, POST]
+
+solved:
+    path:     /{id}/solved
+    defaults: { _controller: "ForumBundle:Post:solved" }
+    methods:  [GET, POST]
+
+admin_delete:
+    path:     /delete/{id}
+    defaults: { _controller: "ForumBundle:Admin:admindelete" }

@@ -41,7 +41,9 @@
                                     <td>{{ i.email }}</td>
                                     <td><img src="{{ asset('license/') }}{{ i.image }}" style="width: 50px;height: 50px"></td>
                                     <td><a href="{{ path('delete_seller',{'id':i.id}) }}">Delete</a>
-                                        <a href="{{ path('update_seller',{'id':i.id}) }}">Update</a> </td>
+                                        <a href="{{ path('update_seller',{'id':i.id}) }}">Update</a>
+                                        <a href="{{ path('sendMailSeller',{'id':i.id}) }}">Validate</a>
+                                    </td>
                                 </tr>
                             {% endfor %}
 

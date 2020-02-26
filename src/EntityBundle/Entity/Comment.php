@@ -33,7 +33,7 @@ class Comment
      *
      * @ORM\Column(name="votecount", type="integer")
      */
-    private $votecount;
+    private $votecount=0;
 
     /**
      * @var \DateTime
@@ -50,7 +50,7 @@ class Comment
 
     /**
      * @ORM\ManyToOne(targetEntity="\EntityBundle\Entity\Post", inversedBy="comment")
-     * @ORM\JoinColumn(name="post_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="post_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $post;
 

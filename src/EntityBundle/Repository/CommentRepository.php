@@ -10,4 +10,16 @@ namespace EntityBundle\Repository;
  */
 class CommentRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findDQL($id)
+    {
+        $dqlresult = $this->getEntityManager()
+            ->createQuery("SELECT c
+                               FROM 
+                                    EntityBundle:Comment c
+                               WHERE
+                                    c.post = '$id'
+                                  
+                              ");
+        return $dqlresult->getResult();
+    }
 }

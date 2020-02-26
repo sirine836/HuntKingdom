@@ -28,7 +28,12 @@ class AppKernel extends Kernel
             new savBundle\savBundle(),
             new PanierBundle\PanierBundle(),
             new EventBundle\EventBundle(),
+<<<<<<< HEAD
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+=======
+            new FOS\CKEditorBundle\FOSCKEditorBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+>>>>>>> forum+recruitment
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

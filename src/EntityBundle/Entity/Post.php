@@ -40,7 +40,30 @@ class Post
      *
      * @ORM\Column(name="votecount", type="integer")
      */
-    private $votecount;
+    private $votecount=0;
+
+    /**
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param string $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=255)
+     */
+    private $category;
 
     /**
      * @var \DateTime
@@ -57,7 +80,7 @@ class Post
     private $solved;
 
     /**
-     * @ORM\ManyToOne(targetEntity="\UserBundle\Entity\User", inversedBy="metacomment")
+     * @ORM\ManyToOne(targetEntity="\UserBundle\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
@@ -207,6 +230,7 @@ class Post
     {
         $this->user = $user;
     }
+
 
 }
 

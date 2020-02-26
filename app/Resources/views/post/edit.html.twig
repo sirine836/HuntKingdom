@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+    <div class="blog">
+        <div class="container">
+            <div class="blog-top">
+    <div style="border-radius: 20px;
+                background-color: #ffc54e;
+                padding: 10px;"><h3 style="text-align: left;color: white">Edit Post</h3></div>
+    {% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
+    {{ form_start(edit_form) }}
+    <div    style="border-radius: 20px;
+                    background-color: #e6e6e6;
+                    padding: 30px;">
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" class="btn btn-warning" />
+    {{ form_end(edit_form) }}
+        {{ form_start(delete_form) }}
+        <input type="submit" value="Delete" class="btn btn-danger">
+        {{ form_end(delete_form) }}
+        <a href="{{ path('post_index') }}" class="btn btn-warning">Back</a>
+    </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

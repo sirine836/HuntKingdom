@@ -10,4 +10,20 @@ namespace EntityBundle\Repository;
  */
 class MetapostRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * @param $id
+     * @return array
+     */
+    public function findMetaDQL($id)
+    {
+        $dqlresult = $this->getEntityManager()
+            ->createQuery("SELECT c
+                               FROM 
+                                    EntityBundle:Metapost c
+                               WHERE
+                                    c.post = '$id'
+                                    
+                              ");
+        return $dqlresult->getResult();
+    }
 }
