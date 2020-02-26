@@ -40,36 +40,36 @@ class MailController extends Controller
         return $this->render('@Recruitment/Mail/sendMail.html.twig', array ('form'=>$form->createView()));
 
         }
-/*
-    public function sendMailAction(Request $request, $id)
+
+    public function sendMailSellerAction(Request $request, $id)
     {
         $mail = new Mail();
         $em = $this->getDoctrine()->getManager();
         $form= $this->createForm(MailType::class,$mail);
         $form->handleRequest($request);
-        $pro = $em->getRepository('UserBundle:User')->find($id);
-      //  $user= $this->getUser();
+        $seller = $em->getRepository('EntityBundle:Seller')->find($id);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $subject = $mail->getSubject();
-            $email = $pro->getEmail();
-            dump($email);
-            exit();
-            $object = $request->get('form')['object'];
-            // $object = $mail->getObject();
+            $email = $seller->getEmail();
+            //$object = $request->get('form')['object'];
+            $object = $mail->getObject();
             $username = 'thunteresprit@gmail.com';
             $message = \Swift_Message::newInstance()
                 ->setSubject($subject)
                 ->setFrom($username)
-                ->setBody($object)
-                ->setTo($email);
+                ->setTo($email)
+                ->setBody($object);
             $this->get('mailer')->send($message);
-
+            $this->addFlash('info','Mail sent successfully');
         }
+
         return $this->render('@Recruitment/Mail/sendMail.html.twig', array ('form'=>$form->createView()));
 
     }
-*/
-    }
+
+
+}
 
 

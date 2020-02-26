@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e1e4c581-5eb7-4796-8109-fd5b7f6f516e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" afterDir="false" />
@@ -41,6 +42,8 @@
       <change beforePath="$PROJECT_DIR$/src/UserBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserBundle/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UserBundle/Resources/views/Default/index2.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/views/Default/index2.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/back/dist/img/user2-160x160.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/back/dist/img/user2-160x160.jpg" afterDir="false" />
+=======
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,6 +266,7 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582553310809" />
+<<<<<<< Updated upstream
     <state width="1493" height="235" key="GridCell.Tab.0.bottom" timestamp="1582739220053">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -279,6 +283,24 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="235" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582739220053" />
+=======
+    <state width="887" height="210" key="GridCell.Tab.0.bottom" timestamp="1582743770491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="887" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582743770491" />
+    <state width="887" height="210" key="GridCell.Tab.0.center" timestamp="1582743770490">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="887" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582743770490" />
+    <state width="887" height="210" key="GridCell.Tab.0.left" timestamp="1582743770489">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="887" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582743770489" />
+    <state width="887" height="210" key="GridCell.Tab.0.right" timestamp="1582743770490">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="887" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582743770490" />
+>>>>>>> Stashed changes
     <state x="519" y="228" key="NewPhpClassDialog" timestamp="1581453265091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

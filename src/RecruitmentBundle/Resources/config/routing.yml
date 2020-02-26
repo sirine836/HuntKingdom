@@ -84,6 +84,8 @@ professional_search:
     path: /listprofessional/search
     defaults: {_controller: RecruitmentBundle:Professional:Search }
 sendMail:
-    path: /listPofessional/sendmail/{id}
+    path: /sendmail/{id}
     defaults: {_controller: RecruitmentBundle:Mail:sendMail}
-
+sendMailSeller:
+    path: /sendmailseller/{id}
+    defaults: {_controller: RecruitmentBundle:Mail:sendMailSeller}

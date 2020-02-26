@@ -46,7 +46,7 @@
                                     <td>{{ tscore[j] }}</td>
                                     <td><a href="{{ path('delete_seller',{'id':i.id}) }}">Delete</a>
                                         <a href="{{ path('update_seller',{'id':i.id}) }}">Update</a>
-                                        <a href="{{ path('sendMail',{'id':i.id}) }}">Validate</a>
+                                        <a href="{{ path('sendMailSeller',{'id':i.id}) }}">Validate</a>
                                     </td>
                                 </tr>
                                 {% set j = j+1 %}
