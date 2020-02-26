@@ -16,7 +16,45 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+      <style>
+          .reservations{
+              background-color: white;
+              font-size: 13pt;
+              margin-bottom: 50px;
+          }
+
+          .reservations a{
+              color:#98fb98;
+          }
+          .reservations a:hover ,.reservations a:focus , .reservations a:visited{
+              color:#98fb98;
+          }
+        .pagination > li > a,
+        .pagination > li > span{
+        color: #BF3E26;
+
+        }
+
+        .pagination > li > a:hover,
+        .pagination > li > span:hover,
+        .pagination > li > a:focus,
+        .pagination > li > span:focus{
+        background-color: #98fb98;
+        color:#BF3E26;
+        }
+        .pagination > .active > a,
+        .pagination > .active > span,
+        .pagination > .active > a:hover,
+        .pagination > .active > span:hover,
+        .pagination > .active > a:focus,
+        .pagination > .active > span:focus{
+        background-color: #1C8C42;
+        color: orange;
+        border: 1px solid #dddddd;
+        }
+</style>
+    {% endblock %}
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -56,7 +94,7 @@
                     <img src="{{ asset('back/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Thunter Admin</a>
+                    <a href="#" class="d-block">Khouloud</a>
                 </div>
             </div>
             <!-- Sidebar Menu -->
@@ -65,62 +103,27 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-                                Thunter Dashboards
+                                Product
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="../../index3.html" class="nav-link">
+                            <li class="nav-item" >
+                                <a href="{{ path('list_product') }}" class="nav-link ">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Cart Dashboard</p>
-                                </a>
-                                <a href="../../index3.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Cart Dashboard</p>
+                                    <p>Product</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
+                                <a href="{{ path('list_category') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Events Dashboard</p>
+                                    <p>Category</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="../../index2.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Forum Dashboard</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index3.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Products Dashboard</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ path('list_seller') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Seller Dashboard</p>
-                                </a>
-                                <a href="{{ path('list_professional') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Tutor Dashboard</p>
-                                </a>
-                                <a href="{{ path('question_new') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Quiz Dashboard</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index3.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Client Services Dashboard</p>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                 </ul>
@@ -173,4 +176,5 @@
 <script src="{{ asset('back/dist/js/demo.js')}}"></script>
 {% block javascripts %}{% endblock %}
 </body>
+
 </html>

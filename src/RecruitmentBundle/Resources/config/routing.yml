@@ -1,6 +1,3 @@
-recruitment_homepage:
-    path:     /recruitment
-    defaults: {_controller: RecruitmentBundle:Default:index}
 seller_add:
     path: /addseller
     defaults: {_controller: RecruitmentBundle:Seller:AddSeller}
@@ -36,6 +33,7 @@ question_continue:
 question_show:
     path:     /question/{id}/show
     defaults: { _controller: RecruitmentBundle:Question:show }
+
 
 question_new:
     path:     /question/new
@@ -80,9 +78,3 @@ proposition_clear_create:
 proposition_delete:
     path:     /proposition/{id}/delete
     defaults: { _controller: RecruitmentBundle:Proposition:delete }
-professional_search:
-    path: /listprofessional/search
-    defaults: {_controller: RecruitmentBundle:Professional:Search }
-score:
-    path: /score
-    defaults: {_controller: RecruitmentBundle:Seller:ScoreSeller}

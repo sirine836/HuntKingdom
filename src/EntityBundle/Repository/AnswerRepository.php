@@ -10,16 +10,12 @@ namespace EntityBundle\Repository;
  */
 class AnswerRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findDQL($id)
+    public function FindByScore()
     {
-        $dqlresult = $this->getEntityManager()
-            ->createQuery("SELECT a
-                               FROM 
-                                    EntityBundle:Answer a
-                               WHERE
-                                    a.user = '$id'
-                                  
-                              ");
-        return $dqlresult->getResult();
+        $query=$this->getEntityManager()
+            ->createQuery("
+            select sum(score) from EntityBundle:Answer res
+            group by idUser");
+        return $query->getResult();
     }
 }

@@ -15,14 +15,19 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--fonts-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
     <!-- start menu -->
     <link href="{{ asset('bundles/product1/css/memenu.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
     <script type="text/javascript" src="{{ asset('bundles/product1/js/memenu.js')}}"></script>
     <script>$(document).ready(function(){$(".memenu").memenu();});</script>
     <script src="{{ asset('bundles/product1/js/simpleCart.min.js')}}"> </script>
-
+</head>
+<body>
 <!--header-->
 <div class="header">
     <div class="header-top">
@@ -60,8 +65,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class=" h_menu4">
                 <ul class="memenu skyblue">
-                    <li class="active grid"><a class="color8" href="{{path('user_homepage')}}">Home</a></li>
-                    <li><a class="color1" href="#">Shop</a></li>
+                    <li class="active grid">
+                        <a class="color8" href="{{path('user_homepage')}}">Home</a>
+                    </li>
+                    <li>
+                        <li class="grid">
+                        <a class="color6" href="{{ path ('list_product_index') }}">Shop</a>
+                        <div class="mepanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <ul>
+                                            <li><a href="{{ path('product_add_Index') }}">Add Product</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+
                     <li class="grid"><a class="color2" href="#">Client Service</a>
                         <div class="mepanel">
                             <div class="row">
@@ -78,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </li>
                     <li><a class="color4" href="forum.html">Forum</a></li>
-                    <li><a class="color4" href="{{path('recruitment_homepage')}}">Recruitment</a></li>
+                    <li><a class="color5" href="recruitment.html">Recruitment</a></li>
                     <li><a class="color6" href="{{path('event_homepage')}}">Events</a></li>
                 </ul>
             </div>
@@ -88,9 +110,72 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 
 </div>
-</head>
-<body>
+{% block stylesheet %}
+    <style>
+        .mon_image{
+            float:left;
+        }
+        .image{
+            float: right;
+        }
+        body { background: rgba(252,255,228,0.0); font: 18px/1.5 sans-serif; }
+        div.polaroid {
+            width: 80%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-top: 30px;
+            margin-bottom: 25px;
+            margin-left: 10%;
+            align-content: center;
 
+        }
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: orange;
+            opacity: 0.7;
+            overflow: hidden;
+            width: 0;
+            height: 90%;
+            transition: 1s ease;
+        }
+
+        .container:hover .overlay {
+            width: 100%;
+        }
+
+        .text {
+            white-space: nowrap;
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            overflow: hidden;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+        .left {
+            padding:20px;
+            float:left;
+            width:40%; /* The width is 20%, by default */
+        }
+
+        .right {
+            float:left;
+            width:50%; /* The width is 20%, by default */
+        }
+    </style>
+{% endblock %}
 
 {% block body %}
 

@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new savBundle\savBundle(),
             new PanierBundle\PanierBundle(),
             new EventBundle\EventBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

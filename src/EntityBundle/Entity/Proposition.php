@@ -40,7 +40,7 @@ class Proposition
         return $this->state;
     }
 
-    public function setState($state)
+    public function setState(bool $state)
     {
         $this->state = $state;
     }

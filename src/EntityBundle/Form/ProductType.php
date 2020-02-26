@@ -2,6 +2,7 @@
 
 namespace EntityBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,6 +22,12 @@ class ProductType extends AbstractType
             ->add('prix')
             ->add('image')
             ->add('file')
+            ->add('category', EntityType::class,
+                array(
+                    'class'=>'EntityBundle:Category',
+                    'choice_label'=>'nomcat',
+                    'multiple'=>false,
+                ))
             ->add('save', SubmitType::class);
     }/**
      * {@inheritdoc}

@@ -10,4 +10,16 @@ namespace EntityBundle\Repository;
  */
 class ProductRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByName($nompr){
+        $query=$this->getEntityManager()
+            ->createQuery("select p from EntityBundle:Product p
+            where p.nompr like :nompr")
+            ->setParameter('nompr',$nompr.'%');
+        return $query->getResult();
+    }
+
+    public function ORDERBYprod()
+    {$query = $this->getEntityManager()
+        ->createQuery("SELECT e FROM EntityBundle:Product e ORDER BY e.prix ASC");
+        return $result = $query->getResult();}
 }

@@ -10,5 +10,4 @@ namespace EntityBundle\Repository;
  */
 class SellerRepository extends \Doctrine\ORM\EntityRepository
 {
-
 }

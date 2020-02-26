@@ -18,12 +18,6 @@ class CategoryType extends AbstractType
         $builder
             ->add('nomcat')
             ->add('souscat')
-            ->add('Product', EntityType::class,
-                array(
-                    'class'=>'EntityBundle:Product',
-                    'choice_label'=>'nompr',
-                    'multiple'=>false,
-                ))
             ->add('save', SubmitType::class);;
     }/**
      * {@inheritdoc}
