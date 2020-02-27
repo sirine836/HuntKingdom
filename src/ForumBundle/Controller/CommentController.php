@@ -106,6 +106,7 @@ class CommentController extends Controller
      */
     public function deleteAction(Request $request, Comment $comment)
     {
+        $back=$comment->getPost()->getId();
         $form = $this->createDeleteForm($comment);
         $form->handleRequest($request);
 
@@ -115,7 +116,7 @@ class CommentController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('comment_index');
+        return $this->redirectToRoute('post_show',array('id'=>$back));
     }
 
     /**
