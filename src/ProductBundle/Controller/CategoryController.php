@@ -13,6 +13,8 @@ use Symfony\Component\HttpFoundation\Request;
 class CategoryController extends Controller
 {
 
+
+
     public function ListCategoryAction(){
         $em = $this->getDoctrine()->getManager();
 
@@ -22,9 +24,6 @@ class CategoryController extends Controller
         ));
     }
 
-    /**
-     * @IsGranted("ROLE_ADMIN")
-     */
     public function AddCategoryAction(Request $request)
     {
         $category = new Category();
@@ -60,6 +59,7 @@ class CategoryController extends Controller
 
         return $this->render('@Product/Category/update_category.html.twig', array("form"=>$form->createView()));
     }
+
     public function DeleteCategoryAction($id)
     {
         $category = $this -> getDoctrine() -> getRepository(Category::class) -> find($id);
@@ -68,18 +68,5 @@ class CategoryController extends Controller
         $em -> flush();
         return $this -> redirectToRoute("list_category");
     }
-  /*  public function SearchAction(Request $request)
-    {
-        $em=$this->getDoctrine()->getManager();
-        $category= $em->getRepository('EntityBundle:Category')->findAll();
-        if($request->isMethod('POST'))
-        {
-            $nomcat=$request->get('nomcat');
-            $category= $em->getRepository('EntityBundle:Category')->findBy(array("nomcat"=>$nomcat));
-        }
-        return $this->render('@Product/Category/search.html.twig', array("category"=>$category));
-
-    }*/
-
 
 }

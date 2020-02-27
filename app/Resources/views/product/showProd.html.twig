@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="polaroid">
+        <div class="left" align="center">
+            <img src="{{ asset('images/') }}{{ Product.image }}" style="width: inherit;height: 300px;margin-top: 2%; border-radius: 20%">
+        </div>
+
+        <div class="container">
+            <div class="right">
+                <h1 style="color: orange">Product</h1>
+                <table id="example1" class="table table-bordered table-striped">
+                    <tbody>
+                    <tr>
+                        <th>Name Product</th>
+                        <td>{{ Product.nompr }}</td>
+                    </tr>
+                    <tr>
+                        <th>Product Quantity</th>
+                        <td>{{ Product.quantity }}</td>
+                    </tr>
+                    <tr>
+                        <th>Product Description</th>
+                        <td>{{ Product.descrip }}</td>
+                    </tr>
+                    <tr>
+                        <th>Product Price</th>
+                        <td>{{ Product.prix }}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <a href="{{ path('list_product_index') }}" style='align-content:center;margin: 1%; margin-bottom: 20px;border-radius: 50px' class="btn btn-primary fas fa-angle-left" >Back</a>
+                <a href="#" class="btn btn-danger btn-sm" style="align-content:center;margin: 1%; margin-bottom: 20px;border-radius: 50px">
+                    <img src="{{ asset('bundles/product1/images/cart.png')}}" alt=""/>
+                </a>
+                <a href="#" style='align-content:center;margin: 1%; margin-bottom: 20px;border-radius: 50px' class="btn btn-default glyphicon glyphicon-thumbs-up" ></a>
+                <a href="#" style='align-content:center;margin: 1%; margin-bottom: 20px;border-radius: 50px' class="btn btn-default glyphicon glyphicon-thumbs-down" ></a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

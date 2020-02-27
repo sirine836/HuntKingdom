@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new EventBundle\EventBundle(),
             new FOS\CKEditorBundle\FOSCKEditorBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

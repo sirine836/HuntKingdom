@@ -11,6 +11,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
+
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>
@@ -27,7 +28,7 @@
                                     <td>Category N°: {{ i.id }}</td>
                                     <td>{{ i.nomcat }}</td>
                                     <td>{{ i.souscat }}</td>
-                                    <td>{{ i.Product.id }}</td>
+                                    <td>{{ i.id }}</td>
                                     <td><a href="{{ path('delete_category',{'id':i.id}) }}">Delete</a>
                                         <a href="{{ path('update_category',{'id':i.id}) }}">Update</a> </td>
                                 </tr>

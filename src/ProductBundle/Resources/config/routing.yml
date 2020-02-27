@@ -1,15 +1,31 @@
+
 product_add:
         path: /addproduct
         defaults: {_controller: ProductBundle:Product:AddProduct}
+product_add_Index:
+        path: /addprod
+        defaults: {_controller: ProductBundle:Product:AddProdIndex}
+show_product:
+        path: /{id}/show
+        defaults: {_controller: ProductBundle:Product:show}
+show_prod:
+        path: /{id}/showProd
+        defaults: {_controller: ProductBundle:Product:showProd}
 list_product:
         path: /listproduct
         defaults: {_controller: ProductBundle:Product:ListProduct}
+list_product_index:
+        path: /listProductIndex
+        defaults: {_controller: ProductBundle:Product:ListProductIndex}
 delete_product:
         path: /deleteproduct/{id}
         defaults: {_controller: ProductBundle:Product:DeleteProduct}
 update_product:
-        path: /updateproduct/{id}
+        path: /updateproductAdmin/{id}
         defaults: {_controller: ProductBundle:Product:UpdateProduct}
+update_product_index:
+        path: /updateproduct/{id}
+        defaults: {_controller: ProductBundle:Product:UpdateProdIndex}
 category_add:
         path: /addcategory
         defaults: {_controller: ProductBundle:Category:AddCategory}
@@ -22,3 +38,15 @@ delete_category:
 update_category:
         path: /updatecategory/{id}
         defaults: {_controller: ProductBundle:Category:UpdateCategory}
+filter_product:
+        path: /filter
+        defaults: {_controller: ProductBundle:Product:filterproduct}
+Search:
+        path: /search
+        defaults: {_controller: ProductBundle:Product:Search}
+Sort:
+        path: /sort
+        defaults: {_controller: ProductBundle:Product:sortProduct}
+Sortprod_index:
+        path: /sortprod
+        defaults: {_controller: ProductBundle:Product:sortProdIndex}

@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="polaroid">
+<div class="container" style="color: orange">
+    <h1 class="page-header">Add Product</h1>
+</div>
+        <div style="margin-left: 200px ; margin-right: 200px" align="center">
+{{ form_start(form) }}
+
+<div class="form-group">
+    <label class="col-form-label" for="inputSuccess"> Product Name </label>
+    {{ form_widget(form.nompr,{'attr': {'class': 'form-control'}} )}}
+</div>
+<div class="form-group">
+    <label class="col-form-label" for="inputSuccess"> Quantity</label>
+    {{ form_widget(form.quantity,{'attr': {'class': 'form-control'}} )}}
+</div>
+<div class="form-group">
+    <label class="col-form-label" for="inputSuccess"> Description</label>
+    {{ form_widget(form.descrip,{'attr': {'class': 'form-control'}} )}}
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" for="inputSuccess"> Price</label>
+    {{ form_widget(form.prix,{'attr': {'class': 'form-control'}} )}}
+</div>
+<div class="form-group ">
+    <label class="col-form-label" for="inputSuccess"> Image</label>
+    {{ form_widget(form.image,{'attr': {'class': 'form-control'}} )}}
+</div>
+            <div class="farm-group" >
+                {{ form_widget(form.file,{'attr': {'class': 'form-control'}} )}}
+            </div>
+            <div class="farm-group" style="margin-bottom: 20px">
+                <label class="col-form-label" for="inputSuccess"> Category</label>
+
+                {{ form_widget(form.category,{'attr': {'class': 'form-control'}} )}}
+            </div>
+    {{ form_end (form) }}
+        </div>
+        </div>
+
+{% endblock %}

@@ -21,27 +21,8 @@ class Category
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    /**
-     * @ORM\ManyToOne(targetEntity="EntityBundle\Entity\Product")
-     * @ORM\JoinColumn(name="idProduct", referencedColumnName="id")"
-     */
-    private $Product;
 
-    /**
-     * @return mixed
-     */
-    public function getProduct()
-    {
-        return $this->Product;
-    }
 
-    /**
-     * @param mixed $Product
-     */
-    public function setProduct($Product)
-    {
-        $this->Product = $Product;
-    }
 
     /**
      * @var string

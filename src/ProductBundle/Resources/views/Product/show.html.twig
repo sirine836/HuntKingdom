@@ -1,0 +1,40 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block container %}
+    <div class="polaroid">
+        <div class="left">
+            <img src="{{ asset('images/') }}{{ Product.image }}" style="width: 100%;height: 300px;margin-top: 2%; border-radius: 20%">
+        </div>
+
+        <div class="container">
+            <div class="right">
+                <h1 style="color: orange">Product</h1>
+                <table id="example1" class="table table-bordered table-striped">
+                    <tbody>
+                    <tr>
+                        <th>Name Product</th>
+                        <td>{{ Product.nompr }}</td>
+                    </tr>
+                    <tr>
+                        <th>Product Quantity</th>
+                        <td>{{ Product.quantity }}</td>
+                    </tr>
+                    <tr>
+                        <th>Product Description</th>
+                        <td>{{ Product.descrip }}</td>
+                    </tr>
+                    <tr>
+                        <th>Product Price</th>
+                        <td>{{ Product.prix }}</td>
+                    </tr>
+                    <tr>
+                        <th>Category Product</th>
+                        <td>{{ Product.Category.nomcat }}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

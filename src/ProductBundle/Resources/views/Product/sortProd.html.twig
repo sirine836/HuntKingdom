@@ -6,8 +6,7 @@
                 <!-- /.card -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title"><a href="{{ path('Sort') }}" class="btn btn-primary">sort</a> </h3> </br></br>
-                        <h3 class="card-title"><a href="{{ path('filter_product') }}" class="btn btn-success">filtrer</a> </h3>
+                        <h3 class="card-title">DataTable with default features</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body" style="margin-bottom: 50px">
@@ -20,12 +19,11 @@
                                 <th>PRODUCT Descrip</th>
                                 <th>PRODUCT PRICE</th>
                                 <th>PRODUCT FILE</th>
-                                <th>Category Product</th>
-                                <th>Actions</th>
+                                <th>Category Products</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for i in products %}
+                            {% for i in prods %}
                                 <tr>
                                     <td>PRODUCT N°: {{ i.id }}</td>
                                     <td>{{ i.nompr }}</td>
@@ -34,9 +32,6 @@
                                     <td>{{ i.prix}}</td>
                                     <td><img src="{{ asset('images/') }}{{ i.image }}" style="width: 50px;height: 50px"></td>
                                     <td>{{ i.Category.nomcat}}</td>
-                                    <td><a href="{{ path('delete_product',{'id':i.id}) }}">Delete</a>
-                                        <a href="{{ path('update_product',{'id':i.id}) }}">Update</a>
-                                        <a href="{{ path('show_product',{'id':i.id}) }}">show</a> </td>
                                     </td>
 
                                 </tr>
@@ -44,10 +39,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="text-center card" style="margin-left: 45%;margin-right: 47%;size: 50px;background-color: #ffd7a1;border-radius: 20%;border-top-color: black" >
-                        {{ knp_pagination_render(products) }}
-                    </div>
-
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
