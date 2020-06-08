@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Historique des Factures</h1>
+<div>
+
+    <table border="1" class="table-hover col-md-9 table-striped" style=" font-size: 14px; text-align: center">
+        <thead style="text-align: center">
+        <th> Num° de Facture </th>
+        <th> Adresse </th>
+        <th> Date de livraison </th>
+        <th> NET A PAYER </th>
+        <th> Action </th>
+        </thead>
+
+        <tbody style=" font-size: 16px ; color: #2d2d2d">
+        {% for facture in factures %}
+            <tr>
+        <td>{{ facture.id }}</td>
+        <td>{{ facture.adresse }}</td>
+        <td>{% if facture.dateDeLivraison %}{{ facture.dateDeLivraison|date('Y-m-d H:i:s') }}{% endif %}</td>
+        <td>{{ facture.panier.prixTotal  }}</td>
+        <td>
+            <a href="{{ path('facture_show', { 'id': facture.id }) }}">afficher</a>
+        </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+
+</div>
+{% endblock %}

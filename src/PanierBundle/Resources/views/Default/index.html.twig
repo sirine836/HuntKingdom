@@ -1,1 +1,48 @@
-Hello World!
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Paniers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datepanier</th>
+                <th>Etat</th>
+                <th>Archive</th>
+                <th>Datearchive</th>
+                <th>Prixtotal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for panier in paniers %}
+            <tr>
+                <td><a href="{{ path('panier_show', { 'id': panier.id }) }}">{{ panier.id }}</a></td>
+                <td>{% if panier.datePanier %}{{ panier.datePanier|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if panier.etat %}Yes{% else %}No{% endif %}</td>
+                <td>{% if panier.archive %}Yes{% else %}No{% endif %}</td>
+                <td>{% if panier.dateArchive %}{{ panier.dateArchive|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ panier.prixTotal }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('panier_show', { 'id': panier.id }) }}">afficher panier</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('panier_edit', { 'id': panier.id }) }}">modifier panier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('panier_new') }}">ajouter panier</a>
+        </li>
+    </ul>
+
+{% endblock %}

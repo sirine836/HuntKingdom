@@ -1,3 +1,161 @@
 panier_homepage:
-    path:     /panier
+    path:     /
     defaults: { _controller: PanierBundle:Default:index }
+
+payer:
+    path:     /{id}/payer
+    defaults: { _controller: PanierBundle:Panier:payer }
+
+panier_mypanier:
+    path:     /mypanier
+    defaults: { _controller: "PanierBundle:Panier:panier" }
+    methods:  GET
+
+panier_index:
+    path:     /
+    defaults: { _controller: "PanierBundle:Panier:index" }
+    methods:  GET
+
+panier_show:
+    path:     /{id}/showpanier
+    defaults: { _controller: "PanierBundle:Panier:show" }
+    methods:  GET
+
+panier_new:
+    path:     /newpanier
+    defaults: { _controller: "PanierBundle:Panier:new" }
+    methods:  [GET, POST]
+
+panier_edit:
+    path:     /{id}/editpanier
+    defaults: { _controller: "PanierBundle:Panier:edit" }
+    methods:  [GET, POST]
+
+panier_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PanierBundle:Panier:delete" }
+    methods:  DELETE
+
+panier_deleteProduct:
+    path:     /{id}/deleteProduct
+    defaults: { _controller: "PanierBundle:Panier:deleteProduct" }
+    methods:  GET
+
+panier_addProductToPanier:
+    path:     /{id}/addProductToPanier
+    defaults: { _controller: "PanierBundle:Panier:addProductToPanier" }
+    methods:  GET
+
+panier_DecreaseProductQTE:
+    path:     /{id}/DecreaseProductQTE
+    defaults: { _controller: "PanierBundle:Panier:DecreaseProductQTE" }
+    methods:  GET
+
+panier_increaseProductQTE:
+    path:     /{id}/increaseProductQTE
+    defaults: { _controller: "PanierBundle:Panier:increaseProductQTE" }
+    methods:  GET
+
+facture_index:
+    path:     /
+    defaults: { _controller: "PanierBundle:Facture:index" }
+    methods:  GET
+
+facture_show:
+    path:     /{id}/show
+    defaults: { _controller: "PanierBundle:Facture:show" }
+    methods:  GET
+
+facture_new:
+    path:     /newfacture
+    defaults: { _controller: "PanierBundle:Facture:new" }
+    methods:  [GET, POST]
+
+facture_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PanierBundle:Facture:edit" }
+    methods:  [GET, POST]
+
+facture_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PanierBundle:Facture:delete" }
+    methods:  DELETE
+
+facture_historiqueIndex:
+    path:     /historique
+    defaults: { _controller: "PanierBundle:Facture:historiqueIndex" }
+    methods:  GET
+
+panier_mypanierapi:
+    path:     /mypanierapi
+    defaults: { _controller: "PanierBundle:PanierApi:index" }
+
+panier_panierapi:
+    path:     /panierapi
+    defaults: { _controller: "PanierBundle:PanierApi:panier" }
+
+panier_showapi:
+    path:     /{id}/showpanierapi
+    defaults: { _controller: "PanierBundle:PanierApi:show" }
+    methods:  GET
+
+panier_newapi:
+    path:     /newpanierapi
+    defaults: { _controller: "PanierBundle:PanierApi:new" }
+    methods:  [GET, POST]
+
+panier_editapi:
+    path:     /{id}/editpanier
+    defaults: { _controller: "PanierBundle:PanierApi:edit" }
+    methods:  [GET, POST]
+
+panier_deleteProductapi:
+    path:     /{id}/deleteProductapi
+    defaults: { _controller: "PanierBundle:PanierApi:deleteProduct" }
+    methods:  GET
+
+panier_affPanierapi:
+    path:     /aff
+    defaults: { _controller: "PanierBundle:PanierApi:affligne" }
+
+panier_affPrixapi:
+    path:     /affP
+    defaults: { _controller: "PanierBundle:PanierApi:affprix" }
+
+panier_addProductToPanierapi:
+    path:     /{id}/addProductToPanierapi
+    defaults: { _controller: "PanierBundle:PanierApi:addProductToPanier" }
+
+panier_Productqteapi:
+    path:     /{id}/Productqteapi
+    defaults: { _controller: "PanierBundle:PanierApi:ProductQTE" }
+
+panier_DecreaseProductQTEapi:
+    path:     /{id}/DecreaseProductQTEapi
+    defaults: { _controller: "PanierBundle:PanierApi:DecreaseProductQTE" }
+    methods:  GET
+
+panier_increaseProductQTEapi:
+    path:     /{id}/increaseProductQTEapi
+    defaults: { _controller: "PanierBundle:PanierApi:increaseProductQTE" }
+    methods:  GET
+
+facture_newapi:
+    path:     /newfactureapi
+    defaults: { _controller: "PanierBundle:FactureApi:new" }
+    methods:  [GET, POST]
+
+facture_paiementapi:
+    path:     /{id}/paiementapi
+    defaults: { _controller: "PanierBundle:FactureApi:Paiement" }
+    methods:  [GET, POST]
+
+facture_showapi:
+    path:     /{id}/showapi
+    defaults: { _controller: "PanierBundle:FactureApi:show2" }
+    methods:  GET
+
+facture_allapi:
+    path:     /allfacture
+    defaults: { _controller: "PanierBundle:FactureApi:allfacture" }
+    methods:  GET

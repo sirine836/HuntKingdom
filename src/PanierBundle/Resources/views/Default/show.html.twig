@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Panier</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ panier.id }}</td>
+            </tr>
+            <tr>
+                <th>Date panier</th>
+                <td>{% if panier.datePanier %}{{ panier.datePanier|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{% if panier.etat %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Archive</th>
+                <td>{% if panier.archive %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datearchive</th>
+                <td>{% if panier.dateArchive %}{{ panier.dateArchive|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Prixtotal</th>
+                <td>{{ panier.prixTotal }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('panier_index') }}">panier list</a>
+        </li>
+        <li>
+            <a href="{{ path('panier_edit', { 'id': panier.id }) }}">modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
