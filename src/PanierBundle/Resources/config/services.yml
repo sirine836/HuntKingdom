@@ -1,4 +1,4 @@
 services:
-#    panier.example:
-#        class: PanierBundle\Example
+#    event.example:
+#        class: EventBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
