@@ -1,0 +1,28 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+    <h1>Reservation</h1>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <tbody>
+        <tr>
+            <th>Event</th>
+            <td>{{ reservation.Events.Titre }}</td>
+        </tr>
+        <tr>
+            <th>Quantite</th>
+            <td>{{ reservation.quantite }}</td>
+        </tr>
+        <tr>
+            <th>Sous le nom de :</th>
+            <td>{{ reservation.user.username}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reservation_index') }}">Back to Eventss</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base2.html.twig" %}
+{% block body %}
+    <div class="polaroid">
+        <div class="left">
+            <img src="{{ asset('images/') }}{{ event.nomImage }}" style="width: inherit;height: 300px;margin-top: 2%; border-radius: 20%; margin-left: 30%">
+        </div>
+
+
+        <div class="container">
+            <div class="right">
+                <h1 style="color: orange">Event</h1>
+                <table id="example1" class="table table-bordered table-striped">
+                    <tbody>
+                    <tr>
+                        <th>Titre</th>
+                        <td>{{ event.titre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ event.description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Organisateur</th>
+                        <td>{{ event.professional.proname }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>{% if event.date %}{{ event.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Nbrplaces</th>
+                        <td>{{ event.nbrPlaces }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prix</th>
+                        <td>{{ event.prix }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ville</th>
+                        <td>{{ event.localisation }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div align="center" style="margin-bottom: 20px">
+                    <a href="{{ path('events_list') }}" class="btn btn-warning"style="border-radius: 20px; width: 200px;height: 50px;font-size: 20px;color: black">Back to the list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

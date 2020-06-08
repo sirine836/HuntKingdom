@@ -1,0 +1,40 @@
+{% extends 'base2.html.twig' %}
+{% block body %}
+
+
+    <h1> Touts les evaluations </h1>
+    <div class="polaroid" style="margin-left: 40px;margin-right: 40px">
+
+    <table id="example1" class="table table-bordered table-striped">
+        <tbody>
+
+        <tr>
+            <th>Evenement</th>
+            <td>{{ evaluation.events.titre }}</td>
+        </tr>
+        <tr>
+            <th>Evaluer par</th>
+            <td>{{ evaluation.user.username }}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{ evaluation.note }}</td>
+        </tr>
+        <tr>
+            <th>Commentaire</th>
+            <td>{{ evaluation.commentaire }}</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+<div align="center">
+
+            <a href="{{ path('evaluation_list') }}" class="btn btn-success polaroid" style="border-radius: 10%" >Back to the list</a>
+
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete" class="btn-danger polaroid" style="border-radius: 40%;font-weight: lighter" >
+            {{ form_end(delete_form) }}
+</div>
+
+{% endblock  %}
+
