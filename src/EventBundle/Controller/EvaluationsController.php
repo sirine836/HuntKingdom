@@ -187,32 +187,29 @@ class EvaluationsController extends Controller
             ;
     }
 
-    public function ajouterAction(Request $request ,float $event_id,$comm, $note){
+    public function ajouterAction(Request $request ,float $event_id,$comm, $note,$user){
         $em = $this->getDoctrine()->getManager();
         $evaluation = new Evaluations();
-        $evaluation->setNote($note);
-        $evaluation->setCommentaire($comm);
-        $user = $em -> getRepository(User::class) -> find(2);
 
-        $evaluation->setUser($user);
+        $eva = $em -> getRepository(Evaluations::class) -> verif($user, $event_id);
+        if($eva==null)
+        {
+            $evaluation->setNote($note);
+            $evaluation->setCommentaire($comm);
+            $user = $em -> getRepository(User::class) -> find($user);
 
+            $evaluation->setUser($user);
+            $event=$this->getDoctrine()->getManager()->getRepository('EntityBundle:Events')->find(intval($event_id));
 
-        //$reservation->setEvents($request->get('event_id'));
-        $event=$this->getDoctrine()->getManager()->getRepository('EntityBundle:Events')->find(intval($event_id));
-
-        $evaluation->setEvents($event);
-
-        //$User = $this->container->get('security.token_storage')->getToken()->getUser();
-        //$reservation->setUser($User);
-
-        $em ->persist($evaluation);
-        $em->flush();
+            $evaluation->setEvents($event);
+            $em ->persist($evaluation);
+            $em->flush();
+        }
         $serializer = new Serializer([new ObjectNormalizer()]);
         $formatted = $serializer->normalize($evaluation);
         return new JsonResponse($formatted);
 
     }
-
     public function ajouter2Action(Request $request ,float $event_id){
         $em = $this->getDoctrine()->getManager();
         $evaluation = new Evaluations();
@@ -353,5 +350,32 @@ class EvaluationsController extends Controller
         return new JsonResponse($formatted);
     }
 
+    public function verifAction($user, $event)
+    {
+        $evaluation = $this->getDoctrine()->getManager()->getRepository('EntityBundle:Evaluations')->verif($user,$event);
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(2);
 
+        $encoder = new JsonEncoder();
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $serializer = new Serializer(array($normalizer), array($encoder));
+        $formatted = $serializer->normalize($evaluation);
+        return new JsonResponse($formatted);
+    }
+
+    public function existAction($user){
+        $evaluation = $this->getDoctrine()->getManager()->getRepository('EntityBundle:Evaluations')->findByUser($user);
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(2);
+
+        $encoder = new JsonEncoder();
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $serializer = new Serializer(array($normalizer), array($encoder));
+        $formatted = $serializer->normalize($evaluation);
+        return new JsonResponse($formatted);
+    }
 }

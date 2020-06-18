@@ -2,6 +2,7 @@
 
 namespace EventBundle\Controller;
 
+use EntityBundle\Entity\Evaluations;
 use EntityBundle\Entity\Events;
 use EntityBundle\Entity\Reservation;
 use EntityBundle\Form\ReservationsType;
@@ -10,7 +11,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use UserBundle\Entity\User;
+use EntityBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -110,24 +111,30 @@ class ReservationController extends Controller
     }
 
 
-    public function ajouterAction(Request $request ,float $event_id){
+    public function ajouterAction(Request $request , $event_id, $user){
         $em = $this->getDoctrine()->getManager();
         $reservation = new Reservation();
-        $reservation->setPrixpaye($request->get('prixpaye'));
-        $reservation->setQuantite($request->get('quantite'));
+
+        $res = $em -> getRepository(Reservation::class) -> verif($user, $event_id);
+
+        if($res==null){
+            $reservation->setPrixpaye($request->get('prixpaye'));
+            $reservation->setQuantite($request->get('quantite'));
 
 
-        //$reservation->setEvents($request->get('event_id'));
-        $event=$this->getDoctrine()->getManager()->getRepository('EntityBundle:Events')->find(intval($event_id));
-        $reservation->setEvents($event);
+            //$reservation->setEvents($request->get('event_id'));
+            $event=$this->getDoctrine()->getManager()->getRepository('EntityBundle:Events')->find(intval($event_id));
+            $reservation->setEvents($event);
 
-        $event->setNbrPlaces($event->getNbrPlaces()-$reservation->getQuantite());
+            $event->setNbrPlaces($event->getNbrPlaces()-$reservation->getQuantite());
 
-        //$User = $this->container->get('security.token_storage')->getToken()->getUser();
-        //$reservation->setUser($User);
+            $user = $em -> getRepository(User::class) -> find($user);
 
-        $em ->persist($reservation);
-        $em->flush();
+            $reservation->setUser($user);
+            $em ->persist($reservation);
+            $em->flush();
+        }
+
         $serializer = new Serializer([new ObjectNormalizer()]);
         $formatted = $serializer->normalize($reservation);
         return new JsonResponse($formatted);
@@ -186,6 +193,21 @@ class ReservationController extends Controller
 
         $normalizer = new ObjectNormalizer();
         $normalizer->setCircularReferenceLimit(3);
+        $encoder = new JsonEncoder();
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $serializer = new Serializer(array($normalizer), array($encoder));
+        $formatted = $serializer->normalize($reservation);
+        return new JsonResponse($formatted);
+    }
+
+    public function verifierAction($user, $event)
+    {
+        $reservation = $this->getDoctrine()->getManager()->getRepository('EntityBundle:Reservation')->verif($user,$event);
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(2);
+
         $encoder = new JsonEncoder();
         $normalizer->setCircularReferenceHandler(function ($object) {
             return $object->getId();
