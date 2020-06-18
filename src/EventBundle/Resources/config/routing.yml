@@ -1,3 +1,20 @@
 event_homepage:
-    path:     /event
+    path:     /
     defaults: { _controller: EventBundle:Default:index }
+
+entity_events:
+    resource: "@EventBundle/Resources/config/routing/events.yml"
+    prefix:   /events
+
+entity_reservation:
+    resource: "@EventBundle/Resources/config/routing/reservation.yml"
+    prefix:   /reservation
+
+entity_evaluation:
+    resource: "@EventBundle/Resources/config/routing/evaluation.yml"
+    prefix: /evaluation
+
+ajax_search:
+    path:     /search
+    defaults: { _controller: "EventBundle:Events:search" }
+    methods:  GET
