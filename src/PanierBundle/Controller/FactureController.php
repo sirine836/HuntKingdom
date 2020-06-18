@@ -50,31 +50,32 @@ class FactureController extends Controller
      */
     public function newAction(Request $request)
     {
-        $facture = new Facture();
-        $form = $this->createForm('EntityBundle\Form\FactureType', $facture);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
+           $facture = new Facture();
+            $form = $this->createForm('EntityBundle\Form\FactureType', $facture);
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
 
-            $panier = $em->getRepository('EntityBundle:Panier')->findPanierDispoDQL($this->getUser()->getId());
-            $panier = $panier[0];
-            $panier->setEtat(true);
-            $panier->setArchive(false);
-            $facture->setEtat(false);
-            $facture->setPanier($panier);
-            $em->persist($facture);
-            $em->persist($panier);
-            $em->flush();
+                $panier = $em->getRepository('EntityBundle:Panier')->findPanierDispoDQL($this->getUser()->getId());
+                $panier = $panier[0];
+                $panier->setEtat(true);
+                $panier->setArchive(false);
+                $facture->setEtat(false);
+                $facture->setPanier($panier);
+                $em->persist($facture);
+                $em->persist($panier);
+                $em->flush();
 
-            return $this->redirectToRoute('facture_show', array('id' => $facture->getId()));
+                return $this->redirectToRoute('facture_show', array('id' => $facture->getId()));
+
+
         }
-
         return $this->render('@Panier/Facture/new.html.twig', array(
             'facture' => $facture,
             'form' => $form->createView(),
         ));
-    }
+       }
 
 
 
